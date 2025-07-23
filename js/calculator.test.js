@@ -46,8 +46,10 @@ describe('Division', () => {
   it('Divides two numbers properly', () => {
     expect(calculator.divide(10, 2)).toBe(5);
   });
-  it('Declines to divide by 0', () => {
-    expect(calculator.divide(10, 0)).toEqual(Error);
+  it('Throws error when dividing by 0', () => {
+    expect(() => calculator.divide(10, 0)).toThrow(
+      Error('Dividing by 0 is prohibited!')
+    );
   });
   it('Pays attention to the sign of the result', () => {
     expect(calculator.divide(20, -5)).toBe(-4);

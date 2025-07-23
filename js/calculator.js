@@ -11,7 +11,13 @@ const calculator = (function thatContainsMainMathOperations() {
     return num1 * num2;
   };
 
-  const divide = function thatDividesFromANumber() {};
+  const divide = function thatDividesFromANumber(dividend, divisor) {
+    if (divisor === 0) {
+      throw new Error('Dividing by 0 is prohibited!');
+    }
+
+    return dividend / divisor;
+  };
 
   return { add, subtract, multiply, divide };
 })();
